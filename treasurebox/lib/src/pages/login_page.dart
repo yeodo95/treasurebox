@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:treasurebox/src/pages/kakao_login_page.dart';
 
@@ -76,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 15,
                     ),
                     ElevatedButton(
-                        onPressed: (){},
+                        onPressed: (){ Get.offAllNamed("/lending_page");},
                         style: ElevatedButton.styleFrom(
                             primary: Color(0xffF6F6F6),
                             onPrimary: Color(0xff616161),
