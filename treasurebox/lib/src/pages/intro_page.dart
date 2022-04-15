@@ -19,23 +19,22 @@ class IntroPage extends StatelessWidget {
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage('assets/images/first_page_background.png')
-                    )
-                ),
+                        image: AssetImage(
+                            'assets/images/first_page_background.png'))),
                 child: Column(
                   children: [
-                    SizedBox(height: 100,),
+                    SizedBox(
+                      height: 100,
+                    ),
                     Text(
                       "Treasure\nBox",
                       style: new TextStyle(
                           fontSize: 32,
                           color: Color(0xff616161),
-                          fontWeight: FontWeight.w700
-                      ),
+                          fontWeight: FontWeight.w700),
                     )
                   ],
-                )
-            ),
+                )),
           ),
           Flexible(
             fit: FlexFit.tight,
@@ -44,16 +43,16 @@ class IntroPage extends StatelessWidget {
                 padding: EdgeInsets.only(left: 20),
                 alignment: Alignment.topLeft,
 //                color: Colors.yellow,
-                child: Text.rich(
-                    TextSpan(
-                        style: TextStyle(fontSize: 21, fontWeight: FontWeight.w700),
-                        children: <TextSpan>[
-                          TextSpan(text: "기억", style: TextStyle(color: Color(0xffFF8E00))),
-                          TextSpan(text: "하고 싶은 장소를 모아 두는\n나만의 보물 상자", style: TextStyle(color: Color(0xff616161))),
-                        ]
-                    )
-                )
-            ),
+                child: Text.rich(TextSpan(
+                    style: TextStyle(fontSize: 21, fontWeight: FontWeight.w700),
+                    children: <TextSpan>[
+                      TextSpan(
+                          text: "기억",
+                          style: TextStyle(color: Color(0xffFF8E00))),
+                      TextSpan(
+                          text: "하고 싶은 장소를 모아 두는\n나만의 보물 상자",
+                          style: TextStyle(color: Color(0xff616161))),
+                    ]))),
           ),
           Flexible(
             fit: FlexFit.tight,
@@ -61,20 +60,22 @@ class IntroPage extends StatelessWidget {
             child: Container(
 //                color: Colors.deepOrangeAccent,
               alignment: Alignment.topCenter,
-              padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: SizedBox(
                 width: double.infinity,
                 height: 44,
                 child: ElevatedButton(
-                    onPressed: (){
+                    onPressed: () {
                       Get.toNamed("/login_page");
                     },
                     style: ElevatedButton.styleFrom(
                         primary: Color(0xffFFC985),
-                        textStyle: TextStyle(color: Color(0xff616161),fontSize: 16)
-                    ),
-                    child: Text("시작하기", style: TextStyle(color: Color(0xff616161)),)
-                ),
+                        textStyle:
+                            TextStyle(color: Color(0xff616161), fontSize: 16)),
+                    child: Text(
+                      "시작하기",
+                      style: TextStyle(color: Color(0xff616161)),
+                    )),
               ),
             ),
           )

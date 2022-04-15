@@ -10,13 +10,12 @@ class KakaoLoginPage extends StatefulWidget {
 
 class _KakaoLoginPageState extends State<KakaoLoginPage> {
   Future<void> _loginButtonPressed() async {
-    try{
+    try {
       OAuthToken token = await UserApi.instance.loginWithKakaoTalk();
       print('카카오톡으로 로그인 성공 ${token.accessToken}');
-    } catch(e){
+    } catch (e) {
       print('카카오톡으로 로그인 실패 $e');
     }
-
   }
 
   @override

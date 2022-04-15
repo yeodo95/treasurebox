@@ -1,0 +1,221 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.treasurebox"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+9        android:targetSdkVersion="31" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->/Users/yeodohyeon/StudioProjects/treasurebox/android/app/src/debug/AndroidManifest.xml:6:5-66
+14-->/Users/yeodohyeon/StudioProjects/treasurebox/android/app/src/debug/AndroidManifest.xml:6:22-64
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->/Users/yeodohyeon/StudioProjects/treasurebox/android/app/src/main/AndroidManifest.xml:37:5-78
+15-->/Users/yeodohyeon/StudioProjects/treasurebox/android/app/src/main/AndroidManifest.xml:37:22-76
+16
+17    <queries>
+17-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-20:15
+18        <package android:name="com.kakao.talk" />
+18-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-50
+18-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-47
+19        <package android:name="com.kakao.onetalk" />
+19-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:9:9-53
+19-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:9:18-50
+20        <package android:name="com.locnall.KimGiSa" />
+20-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:10:9-55
+20-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:10:18-52
+21        <package android:name="com.lguplus.navi" />
+21-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:11:9-52
+21-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:11:18-49
+22
+23        <intent>
+23-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-19:18
+24            <action android:name="android.intent.action.VIEW" />
+24-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-65
+24-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:14:21-62
+25
+26            <category android:name="android.intent.category.BROWSABLE" />
+26-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-74
+26-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:16:23-71
+27
+28            <data android:scheme="https" />
+28-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-44
+28-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:18:19-41
+29        </intent>
+30    </queries>
+31
+32    <uses-feature
+32-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:9:5-11:35
+33        android:glEsVersion="0x00020000"
+33-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:10:9-41
+34        android:required="true" />
+34-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:11:9-32
+35    <uses-feature
+35-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:12:5-14:36
+36        android:name="android.hardware.wifi"
+36-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:13:9-45
+37        android:required="false" />
+37-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:14:9-33
+38
+39    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+39-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:17:5-79
+39-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:17:22-76
+40    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+40-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:18:5-76
+40-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:18:22-73
+41
+42    <application
+43        android:name="android.app.Application"
+44        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+44-->[androidx.core:core:1.9.0-alpha02] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/76f5793d8b0d8aea280c6134d428f201/core-1.9.0-alpha02/AndroidManifest.xml:24:18-86
+45        android:debuggable="true"
+46        android:icon="@mipmap/ic_launcher"
+47        android:label="treasurebox" >
+48        <activity
+49            android:name="com.example.treasurebox.MainActivity"
+50            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+51            android:exported="true"
+52            android:hardwareAccelerated="true"
+53            android:launchMode="singleTop"
+54            android:theme="@style/LaunchTheme"
+55            android:windowSoftInputMode="adjustResize" >
+56
+57            <!--
+58                 Specifies an Android theme to apply to this Activity as soon as
+59                 the Android process has started. This theme is visible to the user
+60                 while the Flutter UI initializes. After that, this theme continues
+61                 to determine the Window background behind the Flutter UI.
+62            -->
+63            <meta-data
+64                android:name="io.flutter.embedding.android.NormalTheme"
+65                android:resource="@style/NormalTheme" />
+66
+67            <intent-filter>
+68                <action android:name="android.intent.action.MAIN" />
+69
+70                <category android:name="android.intent.category.LAUNCHER" />
+71            </intent-filter>
+72        </activity>
+73        <!--
+74             Don't delete the meta-data below.
+75             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+76        -->
+77        <meta-data
+78            android:name="flutterEmbedding"
+79            android:value="2" />
+80        <meta-data
+81            android:name="com.naver.maps.map.CLIENT_ID"
+82            android:value="vy0b6e92ja" />
+83
+84        <activity
+84-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:23:9-27:56
+85            android:name="com.kakao.sdk.flutter.TalkAuthCodeActivity"
+85-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-70
+86            android:exported="true"
+86-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:25:13-36
+87            android:launchMode="singleTask"
+87-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:26:13-44
+88            android:theme="@style/TransparentCompat" />
+88-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:27:13-53
+89        <activity
+89-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:28:9-32:56
+90            android:name="com.kakao.sdk.flutter.AuthCodeCustomTabsActivity"
+90-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:29:13-76
+91            android:exported="true"
+91-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:30:13-36
+92            android:launchMode="singleTask"
+92-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:31:13-44
+93            android:theme="@style/TransparentCompat" />
+93-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:32:13-53
+94
+95        <uses-library
+95-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+96            android:name="androidx.window.extensions"
+96-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+97            android:required="false" />
+97-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+98        <uses-library
+98-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+99            android:name="androidx.window.sidecar"
+99-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+100            android:required="false" />
+100-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+101
+102        <activity
+102-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:21:9-25:51
+103            android:name="com.naver.maps.map.app.LegendActivity"
+103-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:22:13-65
+104            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+104-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:23:13-91
+105            android:label="@string/navermap_legend"
+105-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:24:13-52
+106            android:theme="@style/navermap_app" />
+106-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:25:13-48
+107        <activity
+107-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:26:9-30:51
+108            android:name="com.naver.maps.map.app.LegalNoticeActivity"
+108-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:27:13-70
+109            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+109-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:28:13-91
+110            android:label="@string/navermap_legal_notice"
+110-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:29:13-58
+111            android:theme="@style/navermap_app" />
+111-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:30:13-48
+112        <activity
+112-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:31:9-35:51
+113            android:name="com.naver.maps.map.app.OpenSourceLicenseActivity"
+113-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:32:13-76
+114            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+114-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:33:13-91
+115            android:label="@string/navermap_open_source_license"
+115-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:34:13-65
+116            android:theme="@style/navermap_app" />
+116-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:35:13-48
+117        <activity
+117-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:23:9-27:75
+118            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+118-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:24:13-93
+119            android:excludeFromRecents="true"
+119-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:25:13-46
+120            android:exported="false"
+120-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:26:13-37
+121            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+121-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:27:13-72
+122        <!--
+123            Service handling Google Sign-In user revocation. For apps that do not integrate with
+124            Google Sign-In, this service will never be started.
+125        -->
+126        <service
+126-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:33:9-37:51
+127            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+127-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:34:13-89
+128            android:exported="true"
+128-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:35:13-36
+129            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+129-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:36:13-107
+130            android:visibleToInstantApps="true" />
+130-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:37:13-48
+131
+132        <activity
+132-->[com.google.android.gms:play-services-base:18.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+133            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+133-->[com.google.android.gms:play-services-base:18.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+134            android:exported="false"
+134-->[com.google.android.gms:play-services-base:18.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+135            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+135-->[com.google.android.gms:play-services-base:18.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+136
+137        <meta-data
+137-->[com.google.android.gms:play-services-basement:18.0.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/65c8b9154009d1931a3db50d7627d9e4/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+138            android:name="com.google.android.gms.version"
+138-->[com.google.android.gms:play-services-basement:18.0.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/65c8b9154009d1931a3db50d7627d9e4/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+139            android:value="@integer/google_play_services_version" />
+139-->[com.google.android.gms:play-services-basement:18.0.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/65c8b9154009d1931a3db50d7627d9e4/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+140    </application>
+141
+142</manifest>

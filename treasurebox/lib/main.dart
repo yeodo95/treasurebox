@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
+import 'package:treasurebox/src/pages/directions_page.dart';
 import 'package:treasurebox/src/pages/intro_page.dart';
 import 'package:treasurebox/src/pages/lending_page.dart';
 import 'package:treasurebox/src/pages/login_page.dart';
@@ -17,20 +18,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.yellow,
-      ),
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.grey,
+        ),
         initialRoute: "/intro_page",
         getPages: [
 //          GetPage(name: "/", page: ()=>Home(), transition: Transition.fadeIn),
 //          GetPage(name: "/loading", page: ()=>LoadingPage(), transition: Transition.downToUp),
-          GetPage(name: "/intro_page", page: ()=>IntroPage(), transition: Transition.fadeIn),
-          GetPage(name: "/login_page", page: ()=>LoginPage(), transition: Transition.fadeIn),
-          GetPage(name: "/lending_page", page: ()=>LendingPage(), transition: Transition.fadeIn),
-        ]
-    );
+          GetPage(
+              name: "/intro_page",
+              page: () => const IntroPage(),
+              transition: Transition.fadeIn),
+          GetPage(
+              name: "/login_page",
+              page: () => const LoginPage(),
+              transition: Transition.downToUp),
+          GetPage(
+              name: "/lending_page",
+              page: () => const LendingPage(),
+              transition: Transition.fadeIn),
+          GetPage(
+              name: "/directions_page",
+              page: () => const DirectionsPage(),
+              transition: Transition.fadeIn),
+        ]);
   }
 }
-
