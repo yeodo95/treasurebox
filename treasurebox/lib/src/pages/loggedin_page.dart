@@ -43,7 +43,7 @@ class LoggedInPage extends StatelessWidget {
           ),
           CircleAvatar(
             radius: 40,
-            //backgroundImage: NetworkImage(user.photoUrl!),
+            backgroundImage: NetworkImage(user.photoUrl!),
           ),
           SizedBox(
             height: 8,

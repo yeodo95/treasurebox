@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:treasurebox/src/widgets/kakaotalk_install_widget.dart';
 import 'package:treasurebox/api/google_signin_api.dart';
 import 'package:treasurebox/src/pages/kakao_login_page.dart';
 import 'package:treasurebox/src/pages/loggedin_page.dart';
@@ -16,17 +16,42 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   Future<void> _kakaologinButtonPressed() async {
-    // try {
-    //   OAuthToken token = awit UserApi.instance.
-    // } catch (e) {}
+    try {
+      isKakaoTalkInstalled();
+      print("is installed");
+    } catch (e) {
+      print("kakaotalk isn't installed");
+      KakaotalkInstallWidget(context);
+
+      return;
+    }
+
     try {
       OAuthToken token = await UserApi.instance.loginWithKakaoTalk();
       print('카카오톡으로 로그인 성공 ${token.accessToken}');
+      Get.toNamed("/directions_page");
     } catch (e) {
       print('카카오톡으로 로그인 실패 $e');
-      const url = 'https://google.com';
-      await launch(url, forceWebView: true, forceSafariVC: true);
     }
+
+    // try {
+    //   AccessTokenInfo tokenInfo = await UserApi.instance.accessTokenInfo();
+    //   print('토큰 정보 보기 성공'
+    //       '\n회원정보: ${tokenInfo.id}'
+    //       '\n만료시간: ${tokenInfo.expiresIn} 초'
+    //       '\n앱아이디: ${tokenInfo.appId}');
+    // } catch (error) {
+    //   print('토큰 정보 보기 실패 $error');
+    // }
+    // try {
+    //   User user = await UserApi.instance.me();
+    //   print('사용자 정보 요청 성공'
+    //       '\n회원번호: ${user.id}'
+    //       '\n닉네임: ${user.kakaoAccount?.profile?.nickname}'
+    //       '\n이메일: ${user.kakaoAccount?.name}');
+    // } catch (error) {
+    //   print('사용자 정보 요청 실패 $error');
+    // }
   }
 
   Future _googleSignIn() async {

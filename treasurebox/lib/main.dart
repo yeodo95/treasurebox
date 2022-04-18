@@ -7,7 +7,7 @@ import 'package:treasurebox/src/pages/lending_page.dart';
 import 'package:treasurebox/src/pages/login_page.dart';
 
 void main() {
-  KakaoSdk.init(nativeAppKey: '057e31efbe58a7c313ba738937752277');
+  KakaoSdk.init(nativeAppKey: '4a21a7b3ad5990d5d419f7cea1f4f57d');
   runApp(const MyApp());
 }
 
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
               transition: Transition.fadeIn),
           GetPage(
               name: "/directions_page",
-              page: () => const DirectionsPage(),
+              page: () => DirectionsPage(),
               transition: Transition.fadeIn),
         ]);
   }

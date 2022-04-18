@@ -12,7 +12,9 @@
          to allow setting breakpoints, to provide hot reload, etc.
     -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <queries>
         <package android:name="com.kakao.talk" />
@@ -81,6 +83,12 @@
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="vy0b6e92ja" />
 
+        <service
+            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+
         <activity
             android:name="com.kakao.sdk.flutter.TalkAuthCodeActivity"
             android:exported="true"
@@ -91,10 +99,6 @@
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/TransparentCompat" />
-        <activity
-            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-            android:exported="false"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
         <uses-library
             android:name="androidx.window.extensions"
