@@ -91,6 +91,10 @@
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/TransparentCompat" />
+        <activity
+            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
         <uses-library
             android:name="androidx.window.extensions"

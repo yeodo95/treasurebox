@@ -132,90 +132,98 @@
 92-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:31:13-44
 93            android:theme="@style/TransparentCompat" />
 93-->[:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:32:13-53
-94
-95        <uses-library
-95-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
-96            android:name="androidx.window.extensions"
-96-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
-97            android:required="false" />
-97-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
-98        <uses-library
-98-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
-99            android:name="androidx.window.sidecar"
-99-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
-100            android:required="false" />
-100-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
-101
-102        <activity
-102-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:21:9-25:51
-103            android:name="com.naver.maps.map.app.LegendActivity"
-103-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:22:13-65
-104            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
-104-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:23:13-91
-105            android:label="@string/navermap_legend"
-105-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:24:13-52
-106            android:theme="@style/navermap_app" />
-106-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:25:13-48
-107        <activity
-107-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:26:9-30:51
-108            android:name="com.naver.maps.map.app.LegalNoticeActivity"
-108-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:27:13-70
-109            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
-109-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:28:13-91
-110            android:label="@string/navermap_legal_notice"
-110-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:29:13-58
-111            android:theme="@style/navermap_app" />
-111-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:30:13-48
-112        <activity
-112-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:31:9-35:51
-113            android:name="com.naver.maps.map.app.OpenSourceLicenseActivity"
-113-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:32:13-76
-114            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
-114-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:33:13-91
-115            android:label="@string/navermap_open_source_license"
-115-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:34:13-65
-116            android:theme="@style/navermap_app" />
-116-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:35:13-48
-117        <activity
-117-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:23:9-27:75
-118            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-118-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:24:13-93
-119            android:excludeFromRecents="true"
-119-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:25:13-46
-120            android:exported="false"
-120-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:26:13-37
-121            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-121-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:27:13-72
-122        <!--
-123            Service handling Google Sign-In user revocation. For apps that do not integrate with
-124            Google Sign-In, this service will never be started.
-125        -->
-126        <service
-126-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:33:9-37:51
-127            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-127-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:34:13-89
-128            android:exported="true"
-128-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:35:13-36
-129            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-129-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:36:13-107
-130            android:visibleToInstantApps="true" />
-130-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:37:13-48
-131
-132        <activity
-132-->[com.google.android.gms:play-services-base:18.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-133            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-133-->[com.google.android.gms:play-services-base:18.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-134            android:exported="false"
-134-->[com.google.android.gms:play-services-base:18.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-135            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-135-->[com.google.android.gms:play-services-base:18.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-136
-137        <meta-data
-137-->[com.google.android.gms:play-services-basement:18.0.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/65c8b9154009d1931a3db50d7627d9e4/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
-138            android:name="com.google.android.gms.version"
-138-->[com.google.android.gms:play-services-basement:18.0.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/65c8b9154009d1931a3db50d7627d9e4/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
-139            android:value="@integer/google_play_services_version" />
-139-->[com.google.android.gms:play-services-basement:18.0.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/65c8b9154009d1931a3db50d7627d9e4/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
-140    </application>
-141
-142</manifest>
+94        <activity
+94-->[:url_launcher_android] /Users/yeodohyeon/StudioProjects/treasurebox/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
+95            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+95-->[:url_launcher_android] /Users/yeodohyeon/StudioProjects/treasurebox/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
+96            android:exported="false"
+96-->[:url_launcher_android] /Users/yeodohyeon/StudioProjects/treasurebox/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
+97            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+97-->[:url_launcher_android] /Users/yeodohyeon/StudioProjects/treasurebox/build/url_launcher_android/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
+98
+99        <uses-library
+99-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+100            android:name="androidx.window.extensions"
+100-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+101            android:required="false" />
+101-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+102        <uses-library
+102-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+103            android:name="androidx.window.sidecar"
+103-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+104            android:required="false" />
+104-->[androidx.window:window:1.0.0-beta04] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+105
+106        <activity
+106-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:21:9-25:51
+107            android:name="com.naver.maps.map.app.LegendActivity"
+107-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:22:13-65
+108            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+108-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:23:13-91
+109            android:label="@string/navermap_legend"
+109-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:24:13-52
+110            android:theme="@style/navermap_app" />
+110-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:25:13-48
+111        <activity
+111-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:26:9-30:51
+112            android:name="com.naver.maps.map.app.LegalNoticeActivity"
+112-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:27:13-70
+113            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+113-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:28:13-91
+114            android:label="@string/navermap_legal_notice"
+114-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:29:13-58
+115            android:theme="@style/navermap_app" />
+115-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:30:13-48
+116        <activity
+116-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:31:9-35:51
+117            android:name="com.naver.maps.map.app.OpenSourceLicenseActivity"
+117-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:32:13-76
+118            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+118-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:33:13-91
+119            android:label="@string/navermap_open_source_license"
+119-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:34:13-65
+120            android:theme="@style/navermap_app" />
+120-->[com.naver.maps:map-sdk:3.12.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/AndroidManifest.xml:35:13-48
+121        <activity
+121-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:23:9-27:75
+122            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+122-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:24:13-93
+123            android:excludeFromRecents="true"
+123-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:25:13-46
+124            android:exported="false"
+124-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:26:13-37
+125            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+125-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:27:13-72
+126        <!--
+127            Service handling Google Sign-In user revocation. For apps that do not integrate with
+128            Google Sign-In, this service will never be started.
+129        -->
+130        <service
+130-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:33:9-37:51
+131            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+131-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:34:13-89
+132            android:exported="true"
+132-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:35:13-36
+133            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+133-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:36:13-107
+134            android:visibleToInstantApps="true" />
+134-->[com.google.android.gms:play-services-auth:20.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/dd3805d3c16996e3816e94ab5d78e349/jetified-play-services-auth-20.0.1/AndroidManifest.xml:37:13-48
+135
+136        <activity
+136-->[com.google.android.gms:play-services-base:18.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+137            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+137-->[com.google.android.gms:play-services-base:18.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+138            android:exported="false"
+138-->[com.google.android.gms:play-services-base:18.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+139            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+139-->[com.google.android.gms:play-services-base:18.0.1] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+140
+141        <meta-data
+141-->[com.google.android.gms:play-services-basement:18.0.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/65c8b9154009d1931a3db50d7627d9e4/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+142            android:name="com.google.android.gms.version"
+142-->[com.google.android.gms:play-services-basement:18.0.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/65c8b9154009d1931a3db50d7627d9e4/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+143            android:value="@integer/google_play_services_version" />
+143-->[com.google.android.gms:play-services-basement:18.0.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/65c8b9154009d1931a3db50d7627d9e4/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+144    </application>
+145
+146</manifest>

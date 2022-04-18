@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:treasurebox/api/google_signin_api.dart';
 import 'package:treasurebox/src/pages/kakao_login_page.dart';
 import 'package:treasurebox/src/pages/loggedin_page.dart';
@@ -14,21 +16,31 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   Future<void> _kakaologinButtonPressed() async {
+    // try {
+    //   OAuthToken token = awit UserApi.instance.
+    // } catch (e) {}
     try {
       OAuthToken token = await UserApi.instance.loginWithKakaoTalk();
       print('카카오톡으로 로그인 성공 ${token.accessToken}');
     } catch (e) {
       print('카카오톡으로 로그인 실패 $e');
+      const url = 'https://google.com';
+      await launch(url, forceWebView: true, forceSafariVC: true);
     }
   }
 
   Future _googleSignIn() async {
     final user = await GoogleSignInApi.login();
-
+    final GoogleSignInAuthentication token = await user!.authentication;
     if (user == null) {
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text('Sign In Failed')));
     } else {
+      String? it = token.idToken;
+      String? at = token.accessToken;
+      print("id token - $it ");
+      print(token.obs);
+      print("access token - $at");
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (context) => LoggedInPage(
           user: user,
