@@ -41,6 +41,7 @@ MERGED from [:shared_preferences_android] /Users/yeodohyeon/StudioProjects/treas
 MERGED from [:geolocator_android] /Users/yeodohyeon/StudioProjects/treasurebox/build/geolocator_android/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-17:12
 MERGED from [:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-35:12
 MERGED from [:package_info_plus] /Users/yeodohyeon/StudioProjects/treasurebox/build/package_info_plus/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:fluttertoast] /Users/yeodohyeon/StudioProjects/treasurebox/build/fluttertoast/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_naver_map] /Users/yeodohyeon/StudioProjects/treasurebox/build/flutter_naver_map/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:google_sign_in_android] /Users/yeodohyeon/StudioProjects/treasurebox/build/google_sign_in_android/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.multidex:multidex:2.0.0] /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/a2f650a70b204393ba1526e0273d563e/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
@@ -130,6 +131,8 @@ MERGED from [:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasur
 MERGED from [:kakao_flutter_sdk_common] /Users/yeodohyeon/StudioProjects/treasurebox/build/kakao_flutter_sdk_common/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:package_info_plus] /Users/yeodohyeon/StudioProjects/treasurebox/build/package_info_plus/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:package_info_plus] /Users/yeodohyeon/StudioProjects/treasurebox/build/package_info_plus/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:fluttertoast] /Users/yeodohyeon/StudioProjects/treasurebox/build/fluttertoast/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:fluttertoast] /Users/yeodohyeon/StudioProjects/treasurebox/build/fluttertoast/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:flutter_naver_map] /Users/yeodohyeon/StudioProjects/treasurebox/build/flutter_naver_map/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:flutter_naver_map] /Users/yeodohyeon/StudioProjects/treasurebox/build/flutter_naver_map/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:google_sign_in_android] /Users/yeodohyeon/StudioProjects/treasurebox/build/google_sign_in_android/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44

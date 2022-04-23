@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
+import 'package:treasurebox/src/pages/adding_page.dart';
 import 'package:treasurebox/src/pages/directions_page.dart';
 import 'package:treasurebox/src/pages/intro_page.dart';
 import 'package:treasurebox/src/pages/lending_page.dart';
@@ -43,6 +44,10 @@ class MyApp extends StatelessWidget {
               name: "/directions_page",
               page: () => DirectionsPage(),
               transition: Transition.fadeIn),
+          GetPage(
+              name: "/adding_page",
+              page: () => AddingPage(),
+              transition: Transition.downToUp),
         ]);
   }
 }

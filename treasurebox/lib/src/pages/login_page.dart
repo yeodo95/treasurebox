@@ -6,6 +6,7 @@ import 'package:treasurebox/src/widgets/kakaotalk_install_widget.dart';
 import 'package:treasurebox/api/google_signin_api.dart';
 import 'package:treasurebox/src/pages/kakao_login_page.dart';
 import 'package:treasurebox/src/pages/loggedin_page.dart';
+import 'package:http/http.dart' as http;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -66,11 +67,27 @@ class _LoginPageState extends State<LoginPage> {
       print("id token - $it ");
       print(token.obs);
       print("access token - $at");
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => LoggedInPage(
-          user: user,
-        ),
-      ));
+
+      var url =
+          Uri.parse('https://treasure-box-04.herokuapp.com/users/google/');
+
+      http.Response response = await http.post(
+        url,
+        body: <String, String>{
+          'access_token': '$at',
+        },
+      );
+
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(response.body)));
+
+      print(response.body);
+
+      // Navigator.of(context).pushReplacement(MaterialPageRoute(
+      //   builder: (context) => LoggedInPage(
+      //     user: user,
+      //   ),
+      // ));
     }
   }
 
@@ -137,7 +154,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 15,
                     ),
                     ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async {
                           // Get.offAllNamed("/lending_page");
                           _googleSignIn();
                         },

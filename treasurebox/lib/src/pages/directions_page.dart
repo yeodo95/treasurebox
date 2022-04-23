@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_naver_map/flutter_naver_map.dart';
+import 'package:get/get.dart';
 
 class DirectionsPage extends StatefulWidget {
   @override
@@ -41,6 +42,12 @@ class _DirectionsPageState extends State<DirectionsPage> {
         });
       });
     });
+
+    if (Get.arguments != null) {
+      _markers = Get.arguments;
+      print('ok');
+    }
+
     super.initState();
   }
 
@@ -148,7 +155,8 @@ class _DirectionsPageState extends State<DirectionsPage> {
             onMapCreated: _onMapCreated,
             onMapTap: _onMapTap,
             markers: _markers,
-            initLocationTrackingMode: LocationTrackingMode.Follow,
+
+            // initLocationTrackingMode: LocationTrackingMode.Follow,
           ),
         ],
       ),
@@ -171,6 +179,13 @@ class _DirectionsPageState extends State<DirectionsPage> {
       ));
       setState(() {});
     }
+
+    print(latLng);
+    print(_markers);
+    Get.toNamed(
+      "/adding_page",
+      arguments: [latLng, _markers],
+    );
   }
 
   void Function()? _onMarkerTap(Marker? marker, Map<String, int?> iconSize) {
