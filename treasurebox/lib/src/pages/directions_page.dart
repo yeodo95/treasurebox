@@ -115,11 +115,10 @@ class _DirectionsPageState extends State<DirectionsPage> {
       unselectedFontSize: 14,
       currentIndex: _selectedIndex, //현재 선택된 Index
       onTap: (int index) {
-        print(_selectedIndex);
         setState(() {
           _selectedIndex = index;
+          bShowbottomSheet = true;
         });
-        print(_selectedIndex);
       },
       items: [
         BottomNavigationBarItem(label: "Search", icon: Icon(Icons.search)),
