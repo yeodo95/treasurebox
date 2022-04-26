@@ -6,6 +6,7 @@ import 'package:treasurebox/src/pages/directions_page.dart';
 import 'package:treasurebox/src/pages/intro_page.dart';
 import 'package:treasurebox/src/pages/lending_page.dart';
 import 'package:treasurebox/src/pages/login_page.dart';
+import 'package:treasurebox/src/pages/modal_test_page.dart';
 
 void main() {
   KakaoSdk.init(nativeAppKey: '4a21a7b3ad5990d5d419f7cea1f4f57d');
@@ -47,6 +48,10 @@ class MyApp extends StatelessWidget {
           GetPage(
               name: "/adding_page",
               page: () => AddingPage(),
+              transition: Transition.downToUp),
+          GetPage(
+              name: "/modal_page",
+              page: () => ModalTest(),
               transition: Transition.downToUp),
         ]);
   }

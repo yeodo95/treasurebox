@@ -1,8 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_naver_map/flutter_naver_map.dart';
 import 'package:get/get.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:treasurebox/api/naver_map_api.dart';
 
 class DirectionsPage extends StatefulWidget {
   @override
@@ -10,16 +13,29 @@ class DirectionsPage extends StatefulWidget {
 }
 
 class _DirectionsPageState extends State<DirectionsPage> {
-  static const MODE_ADD = 0xF1;
-  static const MODE_REMOVE = 0xF2;
-  static const MODE_NONE = 0xF3;
-  int _currentMode = MODE_NONE;
+  bool bShowbottomSheet = false;
+  int _selectedIndex = 0;
 
   Completer<NaverMapController> _controller = Completer();
   List<Marker> _markers = [];
 
   @override
   void initState() {
+    setState(() {
+      _markers.add(Marker(
+          markerId: 'id',
+          position: LatLng(37.563600, 126.962370),
+          captionText: "커스텀 아이콘",
+          captionColor: Colors.indigo,
+          captionTextSize: 20.0,
+          alpha: 0.8,
+          captionOffset: 30,
+          anchor: AnchorPoint(0.5, 1),
+          width: 30,
+          height: 30,
+          infoWindow: '인포 윈도우',
+          onMarkerTab: _onMarkerTap));
+    });
     WidgetsBinding.instance?.addPostFrameCallback((_) {
       OverlayImage.fromAssetImage(
         assetName: 'icon/marker.png',
@@ -35,8 +51,8 @@ class _DirectionsPageState extends State<DirectionsPage> {
               captionOffset: 30,
               icon: image,
               anchor: AnchorPoint(0.5, 1),
-              width: 45,
-              height: 45,
+              width: 30,
+              height: 30,
               infoWindow: '인포 윈도우',
               onMarkerTab: _onMarkerTap));
         });
@@ -55,111 +71,92 @@ class _DirectionsPageState extends State<DirectionsPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(),
-        body: Column(
-          children: <Widget>[
-            _controlPanel(),
-            _naverMap(),
-          ],
+          body: Stack(
+            children: <Widget>[
+              _naverMap(),
+              _bottomSheet(),
+              _mapController(),
+            ],
+          ),
+          bottomNavigationBar: _bottomNavBar()),
+    );
+  }
+
+  Widget _mapController() {
+    return Container(
+      alignment: Alignment.bottomRight,
+      child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+        IconButton(
+            onPressed: () async {
+              print("push +");
+              final NaverMapController controller = await _controller.future;
+              controller.moveCamera(CameraUpdate.zoomIn());
+            },
+            icon: Icon(Icons.add_circle_outline)),
+        IconButton(
+            onPressed: () async {
+              print("push -");
+              final NaverMapController controller = await _controller.future;
+              controller.moveCamera(CameraUpdate.zoomOut());
+            },
+            icon: Icon(Icons.remove_circle_outline)),
+      ]),
+    );
+  }
+
+  Widget _bottomNavBar() {
+    return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: Colors.grey,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.white.withOpacity(.60),
+
+      selectedFontSize: 14,
+      unselectedFontSize: 14,
+      currentIndex: _selectedIndex, //현재 선택된 Index
+      onTap: (int index) {
+        print(_selectedIndex);
+        setState(() {
+          _selectedIndex = index;
+        });
+        print(_selectedIndex);
+      },
+      items: [
+        BottomNavigationBarItem(label: "Search", icon: Icon(Icons.search)),
+        BottomNavigationBarItem(label: "viewlist", icon: Icon(Icons.view_list)),
+        BottomNavigationBarItem(
+            label: "add",
+            icon: Icon(
+              Icons.add,
+              size: 35,
+            )),
+        BottomNavigationBarItem(label: "bookmark", icon: Icon(Icons.bookmark)),
+        BottomNavigationBarItem(label: "Setting", icon: Icon(Icons.settings)),
+      ],
+    );
+  }
+
+  _bottomSheet() {
+    return Visibility(
+      visible: bShowbottomSheet,
+      child: SlidingUpPanel(
+        panel: Center(
+          child: Text("This is the sliding Widget"),
+        ),
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(25),
         ),
       ),
     );
   }
 
-  _controlPanel() {
-    return Container(
-      padding: EdgeInsets.all(16),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          // 추가
-          Expanded(
-            child: GestureDetector(
-              onTap: () => setState(() => _currentMode = MODE_ADD),
-              child: Container(
-                decoration: BoxDecoration(
-                    color:
-                        _currentMode == MODE_ADD ? Colors.black : Colors.white,
-                    borderRadius: BorderRadius.circular(6),
-                    border: Border.all(color: Colors.black)),
-                padding: EdgeInsets.all(8),
-                margin: EdgeInsets.only(right: 8),
-                child: Text(
-                  '추가',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color:
-                        _currentMode == MODE_ADD ? Colors.white : Colors.black,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 14,
-                  ),
-                ),
-              ),
-            ),
-          ),
-
-          // 삭제
-          Expanded(
-            child: GestureDetector(
-              onTap: () => setState(() => _currentMode = MODE_REMOVE),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: _currentMode == MODE_REMOVE
-                        ? Colors.black
-                        : Colors.white,
-                    borderRadius: BorderRadius.circular(6),
-                    border: Border.all(color: Colors.black)),
-                padding: EdgeInsets.all(8),
-                margin: EdgeInsets.only(right: 8),
-                child: Text(
-                  '삭제',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: _currentMode == MODE_REMOVE
-                        ? Colors.white
-                        : Colors.black,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 14,
-                  ),
-                ),
-              ),
-            ),
-          ),
-
-          // none
-          GestureDetector(
-            onTap: () => setState(() => _currentMode = MODE_NONE),
-            child: Container(
-              decoration: BoxDecoration(
-                  color:
-                      _currentMode == MODE_NONE ? Colors.black : Colors.white,
-                  borderRadius: BorderRadius.circular(6),
-                  border: Border.all(color: Colors.black)),
-              padding: EdgeInsets.all(4),
-              child: Icon(
-                Icons.clear,
-                color: _currentMode == MODE_NONE ? Colors.white : Colors.black,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   _naverMap() {
-    return Expanded(
-      child: Stack(
-        children: <Widget>[
-          NaverMap(
-            onMapCreated: _onMapCreated,
-            onMapTap: _onMapTap,
-            markers: _markers,
+    return NaverMap(
+      onMapCreated: _onMapCreated,
+      onMapTap: _onMapTap,
+      markers: _markers,
 
-            // initLocationTrackingMode: LocationTrackingMode.Follow,
-          ),
-        ],
-      ),
+      // initLocationTrackingMode: LocationTrackingMode.Follow,
     );
   }
 
@@ -170,33 +167,29 @@ class _DirectionsPageState extends State<DirectionsPage> {
   }
 
   void _onMapTap(LatLng latLng) {
-    if (_currentMode == MODE_ADD) {
-      _markers.add(Marker(
-        markerId: DateTime.now().toIso8601String(),
-        position: latLng,
-        infoWindow: '테스트',
-        onMarkerTab: _onMarkerTap,
-      ));
-      setState(() {});
-    }
-
+    setState(() {
+      bShowbottomSheet = false;
+    });
     print(latLng);
-    print(_markers);
-    Get.toNamed(
-      "/adding_page",
-      arguments: [latLng, _markers],
-    );
+    // print(_markers);
+    // Get.toNamed(
+    //   "/adding_page",
+    //   arguments: [latLng, _markers],
+    // );
   }
 
   void Function()? _onMarkerTap(Marker? marker, Map<String, int?> iconSize) {
     int pos = _markers.indexWhere((m) => m.markerId == marker?.markerId);
     setState(() {
       _markers[pos].captionText = '선택됨';
+      bShowbottomSheet = true;
     });
-    if (_currentMode == MODE_REMOVE) {
-      setState(() {
-        _markers.removeWhere((m) => m.markerId == marker?.markerId);
-      });
-    }
+    // if (_currentMode == MODE_REMOVE) {
+    //   setState(() {
+    //     _markers.removeWhere((m) => m.markerId == marker?.markerId);
+    //   });
+    // }
+
+    //하단 모달 띄우기
   }
 }

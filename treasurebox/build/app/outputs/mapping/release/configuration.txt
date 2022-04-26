@@ -124,9 +124,16 @@
 # The proguard configuration file for the following section is /Users/yeodohyeon/StudioProjects/treasurebox/build/app/intermediates/aapt_proguard_file/release/aapt_rules.txt
 -keep class android.app.Application { <init>(); }
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
+-keep class com.baseflow.geolocator.GeolocatorLocationService { <init>(); }
 -keep class com.example.treasurebox.MainActivity { <init>(); }
+-keep class com.google.android.gms.auth.api.signin.RevocationBoundService { <init>(); }
+-keep class com.google.android.gms.auth.api.signin.internal.SignInHubActivity { <init>(); }
+-keep class com.google.android.gms.common.api.GoogleApiActivity { <init>(); }
 -keep class com.kakao.sdk.flutter.AuthCodeCustomTabsActivity { <init>(); }
 -keep class com.kakao.sdk.flutter.TalkAuthCodeActivity { <init>(); }
+-keep class com.naver.maps.map.app.LegalNoticeActivity { <init>(); }
+-keep class com.naver.maps.map.app.LegendActivity { <init>(); }
+-keep class com.naver.maps.map.app.OpenSourceLicenseActivity { <init>(); }
 -keep class android.widget.Space { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class androidx.appcompat.app.AlertController$RecycleListView { <init>(android.content.Context, android.util.AttributeSet); }
@@ -170,6 +177,22 @@
 -keep class androidx.constraintlayout.widget.ConstraintLayout { <init>(android.content.Context, android.util.AttributeSet); }
 
 -keep class androidx.core.widget.NestedScrollView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class androidx.recyclerview.widget.RecyclerView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class com.naver.maps.map.MapControlsView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class com.naver.maps.map.widget.CompassView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class com.naver.maps.map.widget.IndoorLevelPickerView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class com.naver.maps.map.widget.LocationButtonView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class com.naver.maps.map.widget.LogoView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class com.naver.maps.map.widget.ScaleBarView { <init>(android.content.Context, android.util.AttributeSet); }
+
+-keep class com.naver.maps.map.widget.ZoomControlView { <init>(android.content.Context, android.util.AttributeSet); }
 
 
 # End of content from /Users/yeodohyeon/StudioProjects/treasurebox/build/app/intermediates/aapt_proguard_file/release/aapt_rules.txt
@@ -256,6 +279,67 @@
 -dontwarn sun.misc.Signal
 
 # End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/1ed06a1220b28b653f839ac05045a32e/rules/lib/META-INF/proguard/coroutines.pro
+# The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/proguard.txt
+-keepattributes Signature, *Annotation*, EnclosingMethod
+
+-keep,allowobfuscation @interface com.naver.maps.map.internal.NativeApi
+
+-keep @com.naver.maps.map.internal.NativeApi class * {
+    *;
+}
+-keepclasseswithmembers class * {
+    @com.naver.maps.map.internal.NativeApi <methods>;
+}
+
+-keepclasseswithmembers class * {
+    @com.naver.maps.map.internal.NativeApi <fields>;
+}
+
+-keepclasseswithmembers class * {
+    native <methods>;
+}
+
+-keep public class * implements com.naver.maps.map.text.TypefaceFactory {
+    public <init>(android.content.Context);
+}
+
+-keep public class * implements com.naver.maps.map.internal.OkHttpClientProvider {
+    public <init>();
+}
+
+# Geometry
+
+-keep public class com.naver.maps.geometry.LatLng {
+    <fields>;
+    <init>(double, double);
+}
+
+-keep public class com.naver.maps.geometry.LatLngBounds {
+    <fields>;
+    <init>(double, double, double, double);
+}
+
+# Google Play Services
+
+-dontwarn com.google.android.gms.common.api.**
+-dontwarn com.google.android.gms.location.**
+
+# OkHttp
+
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn javax.annotation.**
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+
+# Gson
+
+-keep class com.google.gson.** {
+   *;
+}
+-dontnote com.google.gson.internal.UnsafeAllocator
+-dontwarn com.google.auto.value.AutoValue
+
+# End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/aca736e5c0ebc35972c39f820dc089a9/jetified-map-sdk-3.12.0/proguard.txt
 # The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/954832eba87b500498f8147ab91412d2/appcompat-1.0.2/proguard.txt
 # Copyright (C) 2018 The Android Open Source Project
 #
@@ -279,6 +363,123 @@
 # keep rules. Add a commonly used SearchView to the keep list until b/109831488 is resolved.
 -keep class androidx.appcompat.widget.SearchView { <init>(...); }
 # End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/954832eba87b500498f8147ab91412d2/appcompat-1.0.2/proguard.txt
+# The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/360022c61b5e20276e4094b219a9f715/jetified-play-services-auth-base-18.0.1/proguard.txt
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.auth.zzeq {
+  <fields>;
+}
+
+# End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/360022c61b5e20276e4094b219a9f715/jetified-play-services-auth-base-18.0.1/proguard.txt
+# The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/proguard.txt
+# b/35135904 Ensure that proguard will not strip the mResultGuardian.
+-keepclassmembers class com.google.android.gms.common.api.internal.BasePendingResult {
+  com.google.android.gms.common.api.internal.BasePendingResult$ReleasableResultGuardian mResultGuardian;
+}
+
+
+
+# End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/642cc9e2632e586d1058ed231591ead4/jetified-play-services-base-18.0.1/proguard.txt
+# The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/c0dcb9670bd55e0a8304215ce9fef0db/jetified-play-services-tasks-18.0.1/proguard.txt
+
+
+# End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/c0dcb9670bd55e0a8304215ce9fef0db/jetified-play-services-tasks-18.0.1/proguard.txt
+# The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/65c8b9154009d1931a3db50d7627d9e4/jetified-play-services-basement-18.0.0/proguard.txt
+# Needed when building against pre-Marshmallow SDK.
+-dontwarn android.security.NetworkSecurityPolicy
+
+# Needed when building against Marshmallow SDK.
+-dontwarn android.app.Notification
+
+# Protobuf has references not on the Android boot classpath
+-dontwarn sun.misc.Unsafe
+-dontwarn libcore.io.Memory
+
+# Internal Google annotations for generating Proguard keep rules.
+-dontwarn com.google.android.apps.common.proguard.UsedBy*
+
+# Annotations referenced by the SDK but whose definitions are contained in
+# non-required dependencies.
+-dontwarn javax.annotation.**
+-dontwarn org.checkerframework.**
+
+# Proguard flags for consumers of the Google Play services SDK
+# https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project
+
+# Keep SafeParcelable NULL value, needed for reflection by DowngradeableSafeParcel
+-keepclassmembers public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+    public static final *** NULL;
+}
+
+# Needed for Parcelable/SafeParcelable classes & their creators to not get renamed, as they are
+# found via reflection.
+-keep class com.google.android.gms.common.internal.ReflectedParcelable
+-keepnames class * implements com.google.android.gms.common.internal.ReflectedParcelable
+-keepclassmembers class * implements android.os.Parcelable {
+  public static final *** CREATOR;
+}
+
+# Keep the classes/members we need for client functionality.
+-keep @interface android.support.annotation.Keep
+-keep @androidx.annotation.Keep class *
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <fields>;
+}
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <methods>;
+}
+
+# Keep androidX equivalent of above android.support to allow Jetification.
+-keep @interface androidx.annotation.Keep
+-keep @androidx.annotation.Keep class *
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <fields>;
+}
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <methods>;
+}
+
+# Keep the names of classes/members we need for client functionality.
+-keep @interface com.google.android.gms.common.annotation.KeepName
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+  @com.google.android.gms.common.annotation.KeepName *;
+}
+
+# Keep Dynamite API entry points
+-keep @interface com.google.android.gms.common.util.DynamiteApi
+-keep @com.google.android.gms.common.util.DynamiteApi public class * {
+  public <fields>;
+  public <methods>;
+}
+
+
+
+# End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/65c8b9154009d1931a3db50d7627d9e4/jetified-play-services-basement-18.0.0/proguard.txt
+# The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/e94706e3c9d551c1eecceda07b48492d/recyclerview-1.0.0/proguard.txt
+# Copyright (C) 2015 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# When layoutManager xml attribute is used, RecyclerView inflates
+#LayoutManagers' constructors using reflection.
+-keep public class * extends androidx.recyclerview.widget.RecyclerView$LayoutManager {
+    public <init>(android.content.Context, android.util.AttributeSet, int, int);
+    public <init>();
+}
+
+# End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/e94706e3c9d551c1eecceda07b48492d/recyclerview-1.0.0/proguard.txt
 # The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/5eb390e850cc60b5ba45e55531b6c245/vectordrawable-animated-1.0.0/proguard.txt
 # Copyright (C) 2016 The Android Open Source Project
 #
@@ -301,6 +502,31 @@
 }
 
 # End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/5eb390e850cc60b5ba45e55531b6c245/vectordrawable-animated-1.0.0/proguard.txt
+# The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/5e86ac6112f317c2f69cf5fc4d8a9536/media-1.0.0/proguard.txt
+# Copyright (C) 2017 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Prevent Parcelable objects from being removed or renamed.
+-keep class android.support.v4.media.** implements android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+
+# Prevent Parcelable objects from being removed or renamed.
+-keep class androidx.media.** implements android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+# End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/5e86ac6112f317c2f69cf5fc4d8a9536/media-1.0.0/proguard.txt
 # The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/0c1acf1a22491565f664a84faa8fdcda/coordinatorlayout-1.0.0/proguard.txt
 # Copyright (C) 2016 The Android Open Source Project
 #
@@ -326,7 +552,7 @@
 -keepattributes *Annotation*
 
 # End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/0c1acf1a22491565f664a84faa8fdcda/coordinatorlayout-1.0.0/proguard.txt
-# The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/proguard.txt
+# The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/76f5793d8b0d8aea280c6134d428f201/core-1.9.0-alpha02/proguard.txt
 # Never inline methods, but allow shrinking and obfuscation.
 -keepclassmembernames,allowobfuscation,allowshrinking class androidx.core.view.ViewCompat$Api* {
   <methods>;
@@ -340,9 +566,12 @@
 -keepclassmembernames,allowobfuscation,allowshrinking class androidx.core.os.UserHandleCompat$Api*Impl {
   <methods>;
 }
+-keepclassmembernames,allowobfuscation,allowshrinking class androidx.core.widget.EdgeEffectCompat$Api*Impl {
+  <methods>;
+}
 
-# End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/proguard.txt
-# The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/61ef02e8f0f19ac7089cb3c73160753b/lifecycle-runtime-2.2.0/proguard.txt
+# End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/76f5793d8b0d8aea280c6134d428f201/core-1.9.0-alpha02/proguard.txt
+# The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/8578375fbf5df5bbe65cca21a6cd6acf/lifecycle-runtime-2.3.1/proguard.txt
 -keepattributes *Annotation*
 
 -keepclassmembers enum androidx.lifecycle.Lifecycle$Event {
@@ -361,8 +590,9 @@
 }
 
 # this rule is need to work properly when app is compiled with api 28, see b/142778206
+# Also this rule prevents registerIn from being inlined.
 -keepclassmembers class androidx.lifecycle.ReportFragment$LifecycleCallbacks { *; }
-# End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/61ef02e8f0f19ac7089cb3c73160753b/lifecycle-runtime-2.2.0/proguard.txt
+# End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/8578375fbf5df5bbe65cca21a6cd6acf/lifecycle-runtime-2.3.1/proguard.txt
 # The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/8d7928c9f52af5f964a662866fcebb3e/jetified-savedstate-1.0.0/proguard.txt
 # Copyright (C) 2019 The Android Open Source Project
 #
@@ -421,6 +651,20 @@
 }
 
 # End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/0451a7a65b542f86b15eb4fe78e151b8/rules/lib/META-INF/proguard/androidx-annotations.pro
+# The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/1ee5c6a43d5da148579444d9255a03c5/rules/lib/META-INF/proguard/okhttp3.pro
+# JSR 305 annotations are for embedding nullability information.
+-dontwarn javax.annotation.**
+
+# A resource is loaded with a relative path so the package of this class must be preserved.
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+
+# OkHttp platform used only on JVM and when Conscrypt dependency is available.
+-dontwarn okhttp3.internal.platform.ConscryptPlatform
+
+# End of content from /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/1ee5c6a43d5da148579444d9255a03c5/rules/lib/META-INF/proguard/okhttp3.pro
 # The proguard configuration file for the following section is /Users/yeodohyeon/.gradle/caches/transforms-2/files-2.1/5bfc0955e244073bdc8cc139cda5e092/jetified-annotation-experimental-1.1.0/proguard.txt
 # Copyright (C) 2020 The Android Open Source Project
 #

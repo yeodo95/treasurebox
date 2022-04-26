@@ -33,6 +33,7 @@ class _LoginPageState extends State<LoginPage> {
       Get.toNamed("/directions_page");
     } catch (e) {
       print('카카오톡으로 로그인 실패 $e');
+      Get.toNamed("/directions_page");
     }
 
     // try {
@@ -83,11 +84,11 @@ class _LoginPageState extends State<LoginPage> {
 
       print(response.body);
 
-      // Navigator.of(context).pushReplacement(MaterialPageRoute(
-      //   builder: (context) => LoggedInPage(
-      //     user: user,
-      //   ),
-      // ));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (context) => LoggedInPage(
+          user: user,
+        ),
+      ));
     }
   }
 

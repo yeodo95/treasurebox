@@ -27,10 +27,10 @@ class AddingPage extends StatelessWidget {
                   ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: const Text("Save Done!")));
 
-                  // Get.toNamed(
-                  //   "/directions_page",
-                  //   arguments: _markers,
-                  // );
+                  Get.toNamed(
+                    "/directions_page",
+                    arguments: _markers,
+                  );
                 },
                 child: Text("확인")),
           ]),
