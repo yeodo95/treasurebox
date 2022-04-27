@@ -23,7 +23,7 @@ class _DirectionsPageState extends State<DirectionsPage> {
   void initState() {
     setState(() {
       _markers.add(Marker(
-          markerId: 'id',
+          markerId: 'Clicked',
           position: LatLng(37.563600, 126.962370),
           captionText: "커스텀 아이콘",
           captionColor: Colors.indigo,
@@ -31,33 +31,32 @@ class _DirectionsPageState extends State<DirectionsPage> {
           alpha: 0.8,
           captionOffset: 30,
           anchor: AnchorPoint(0.5, 1),
-          width: 30,
-          height: 30,
           infoWindow: '인포 윈도우',
           onMarkerTab: _onMarkerTap));
     });
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
-      OverlayImage.fromAssetImage(
-        assetName: 'icon/marker.png',
-      ).then((image) {
-        setState(() {
-          _markers.add(Marker(
-              markerId: 'id',
-              position: LatLng(37.563600, 126.962370),
-              captionText: "커스텀 아이콘",
-              captionColor: Colors.indigo,
-              captionTextSize: 20.0,
-              alpha: 0.8,
-              captionOffset: 30,
-              icon: image,
-              anchor: AnchorPoint(0.5, 1),
-              width: 30,
-              height: 30,
-              infoWindow: '인포 윈도우',
-              onMarkerTab: _onMarkerTap));
-        });
-      });
-    });
+
+    // WidgetsBinding.instance?.addPostFrameCallback((_) {
+    //   OverlayImage.fromAssetImage(
+    //     assetName: 'icon/marker.png',
+    //   ).then((image) {
+    //     setState(() {
+    //       _markers.add(Marker(
+    //           markerId: 'id',
+    //           position: LatLng(37.563600, 126.962370),
+    //           captionText: "커스텀 아이콘",
+    //           captionColor: Colors.indigo,
+    //           captionTextSize: 20.0,
+    //           alpha: 0.8,
+    //           captionOffset: 30,
+    //           icon: image,
+    //           anchor: AnchorPoint(0.5, 1),
+    //           width: 30,
+    //           height: 30,
+    //           infoWindow: '인포 윈도우',
+    //           onMarkerTab: _onMarkerTap));
+    //     });
+    //   });
+    // });
 
     if (Get.arguments != null) {
       _markers = Get.arguments;
@@ -86,6 +85,15 @@ class _DirectionsPageState extends State<DirectionsPage> {
     return Container(
       alignment: Alignment.bottomRight,
       child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+        IconButton(
+            onPressed: () async {
+              print("push bearing");
+              final NaverMapController controller = await _controller.future;
+              LocationOverlay(controller).setBearing(90.0);
+              // controller.locationOverlay?.setBearing(90.0);
+              // print(controller.locationOverlay);
+            },
+            icon: Icon(Icons.explore_outlined)),
         IconButton(
             onPressed: () async {
               print("push +");
@@ -118,6 +126,7 @@ class _DirectionsPageState extends State<DirectionsPage> {
         setState(() {
           _selectedIndex = index;
           bShowbottomSheet = true;
+          print(_markers.length);
         });
       },
       items: [
@@ -153,6 +162,7 @@ class _DirectionsPageState extends State<DirectionsPage> {
     return NaverMap(
       onMapCreated: _onMapCreated,
       onMapTap: _onMapTap,
+      onSymbolTap: _onSymbolTap,
       markers: _markers,
 
       // initLocationTrackingMode: LocationTrackingMode.Follow,
@@ -175,6 +185,14 @@ class _DirectionsPageState extends State<DirectionsPage> {
     //   "/adding_page",
     //   arguments: [latLng, _markers],
     // );
+  }
+
+  void _onSymbolTap(LatLng? latLng, String? str) {
+    print(str);
+
+    setState(() {
+      _markers[0].position = latLng;
+    });
   }
 
   void Function()? _onMarkerTap(Marker? marker, Map<String, int?> iconSize) {
