@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
           GetPage(
               name: "/login_page",
               page: () => const LoginPage(),
-              transition: Transition.downToUp),
+              transition: Transition.fadeIn),
           GetPage(
               name: "/lending_page",
               page: () => const LendingPage(),

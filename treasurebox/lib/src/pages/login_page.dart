@@ -96,80 +96,142 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        alignment: Alignment.center,
         child: Column(
           children: [
             Flexible(
-                fit: FlexFit.tight,
-                flex: 4,
-                child: Container(
-                  alignment: Alignment.bottomCenter,
-                  child: Text(
-                    "반가워요:)",
-                    style: new TextStyle(
-                      color: Color(0xffFF8E00),
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                    ),
+              fit: FlexFit.tight,
+              flex: 55,
+              child: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage('assets/images/login_background.png'),
                   ),
-                )),
-            Flexible(
-                fit: FlexFit.tight,
-                flex: 3,
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 15),
-                  child: Column(children: [
-                    Text(
-                      "보물 상자를 만들기 위해서는",
-                      style: new TextStyle(
-                          color: Color(0xff616161),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.12,
                     ),
-                    Text(
-                      "로그인이 필요해요",
-                      style: new TextStyle(
-                          color: Color(0xff616161),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
+                    Container(
+                      alignment: Alignment.bottomCenter,
+                      child: Image(
+                        width: MediaQuery.of(context).size.width * 0.24,
+                        image: AssetImage('assets/images/title.png'),
+                      ),
                     ),
-                  ]),
-                )),
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        vertical: MediaQuery.of(context).size.height * 0.02,
+                      ),
+                      child: Column(children: [
+                        Text(
+                          "나만의 장소를 모아두는,",
+                          style: new TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Text(
+                          "보물상자",
+                          style: new TextStyle(
+                              color: Color(0xffFFFFFF),
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ]),
+                    ),
+                  ],
+                ),
+              ),
+            ),
             Flexible(
-                fit: FlexFit.tight,
-                flex: 5,
+              fit: FlexFit.tight,
+              flex: 45,
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                  vertical: MediaQuery.of(context).size.height * 0.03,
+                ),
                 child: Column(
                   children: [
-                    ElevatedButton(
-                        onPressed: _kakaologinButtonPressed,
-                        style: ElevatedButton.styleFrom(
-                            primary: Colors.yellow,
-                            onPrimary: Color(0xff616161),
-                            minimumSize: Size(183, 45),
-                            textStyle: new TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold)),
-                        child: Text(
-                          "카카오 로그인",
-                        )),
-                    SizedBox(
-                      height: 15,
+                    Text(
+                      "간편하게 시작하기",
+                      style: new TextStyle(
+                          fontSize: 16, fontWeight: FontWeight.w500),
                     ),
-                    ElevatedButton(
-                        onPressed: () async {
-                          // Get.offAllNamed("/lending_page");
-                          _googleSignIn();
-                        },
-                        style: ElevatedButton.styleFrom(
-                            primary: Color(0xffF6F6F6),
-                            onPrimary: Color(0xff616161),
-                            minimumSize: Size(183, 45),
-                            textStyle: new TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold)),
-                        child: Text(
-                          "구글 로그인",
-                        )),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.03,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 65,
+                          height: 65,
+                          child: IconButton(
+                            onPressed: () async {
+                              // Get.offAllNamed("/lending_page");
+                              _googleSignIn();
+                            },
+                            padding: new EdgeInsets.all(0.0),
+                            icon: Image(
+                              image: AssetImage(
+                                "assets/images/icon_googleLogin.png",
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.1,
+                        ),
+                        SizedBox(
+                          width: 65,
+                          height: 65,
+                          child: IconButton(
+                            onPressed: _kakaologinButtonPressed,
+                            padding: new EdgeInsets.all(0.0),
+                            icon: Image(
+                              image: AssetImage(
+                                "assets/images/icon_kakaoLogin.png",
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    // ElevatedButton(
+                    //     onPressed: _kakaologinButtonPressed,
+                    //     style: ElevatedButton.styleFrom(
+                    //         primary: Colors.yellow,
+                    //         onPrimary: Color(0xff616161),
+                    //         minimumSize: Size(183, 45),
+                    //         textStyle: new TextStyle(
+                    //             fontSize: 16, fontWeight: FontWeight.bold)),
+                    //     child: Text(
+                    //       "카카오 로그인",
+                    //     )),
+                    // SizedBox(
+                    //   height: 15,
+                    // ),
+                    // ElevatedButton(
+                    //     onPressed: () async {
+                    //       // Get.offAllNamed("/lending_page");
+                    //       _googleSignIn();
+                    //     },
+                    //     style: ElevatedButton.styleFrom(
+                    //         primary: Color(0xffF6F6F6),
+                    //         onPrimary: Color(0xff616161),
+                    //         minimumSize: Size(183, 45),
+                    //         textStyle: new TextStyle(
+                    //             fontSize: 16, fontWeight: FontWeight.bold)),
+                    //     child: Text(
+                    //       "구글 로그인",
+                    //     )),
                   ],
-                )),
+                ),
+              ),
+            ),
           ],
         ),
       ),
