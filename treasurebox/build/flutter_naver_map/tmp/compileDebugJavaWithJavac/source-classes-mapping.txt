@@ -1,2 +1,0 @@
-map/naver/plugin/net/lbstech/naver_map_plugin/BuildConfig.java
- map.naver.plugin.net.lbstech.naver_map_plugin.BuildConfig
