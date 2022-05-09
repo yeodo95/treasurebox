@@ -6,6 +6,7 @@ import 'package:flutter_naver_map/flutter_naver_map.dart';
 import 'package:get/get.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:treasurebox/api/naver_map_api.dart';
+import 'package:treasurebox/src/class/userInfo.dart';
 
 class DirectionsPage extends StatefulWidget {
   @override
@@ -13,8 +14,14 @@ class DirectionsPage extends StatefulWidget {
 }
 
 class _DirectionsPageState extends State<DirectionsPage> {
+  static const MODE_HOME = 0xF1;
+  static const MODE_MAP = 0xF2;
+  static const MODE_MYPAGE = 0xF3;
+  int _currentMode = MODE_HOME;
   bool bShowbottomSheet = false;
   int _selectedIndex = 0;
+
+  userInfo user = new userInfo.fromMap({'name': '여도현', 'id': 'yeodo'});
 
   Completer<NaverMapController> _controller = Completer();
   List<Marker> _markers = [];
@@ -72,6 +79,7 @@ class _DirectionsPageState extends State<DirectionsPage> {
       child: Scaffold(
           body: Stack(
             children: <Widget>[
+              _lending(),
               _naverMap(),
               _bottomSheet(),
               _mapController(),
@@ -82,64 +90,69 @@ class _DirectionsPageState extends State<DirectionsPage> {
   }
 
   Widget _mapController() {
-    return Container(
-      alignment: Alignment.bottomRight,
-      child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
-        IconButton(
-            onPressed: () async {
-              print("push bearing");
-              final NaverMapController controller = await _controller.future;
-              LocationOverlay(controller).setBearing(90.0);
-              // controller.locationOverlay?.setBearing(90.0);
-              // print(controller.locationOverlay);
-            },
-            icon: Icon(Icons.explore_outlined)),
-        IconButton(
-            onPressed: () async {
-              print("push +");
-              final NaverMapController controller = await _controller.future;
-              controller.moveCamera(CameraUpdate.zoomIn());
-            },
-            icon: Icon(Icons.add_circle_outline)),
-        IconButton(
-            onPressed: () async {
-              print("push -");
-              final NaverMapController controller = await _controller.future;
-              controller.moveCamera(CameraUpdate.zoomOut());
-            },
-            icon: Icon(Icons.remove_circle_outline)),
-      ]),
+    return Visibility(
+      visible: _currentMode == MODE_MAP ? true : false,
+      child: Container(
+        alignment: Alignment.bottomRight,
+        child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+          IconButton(
+              onPressed: () async {
+                print("push bearing");
+                final NaverMapController controller = await _controller.future;
+                LocationOverlay(controller).setBearing(90.0);
+                // controller.locationOverlay?.setBearing(90.0);
+                // print(controller.locationOverlay);
+              },
+              icon: Icon(Icons.explore_outlined)),
+          IconButton(
+              onPressed: () async {
+                print("push +");
+                final NaverMapController controller = await _controller.future;
+                controller.moveCamera(CameraUpdate.zoomIn());
+              },
+              icon: Icon(Icons.add_circle_outline)),
+          IconButton(
+              onPressed: () async {
+                print("push -");
+                final NaverMapController controller = await _controller.future;
+                controller.moveCamera(CameraUpdate.zoomOut());
+              },
+              icon: Icon(Icons.remove_circle_outline)),
+        ]),
+      ),
     );
   }
 
   Widget _bottomNavBar() {
     return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
-      backgroundColor: Colors.grey,
-      selectedItemColor: Colors.white,
-      unselectedItemColor: Colors.white.withOpacity(.60),
-
-      selectedFontSize: 14,
-      unselectedFontSize: 14,
+      backgroundColor: Colors.white,
+      selectedItemColor: Colors.grey,
+      unselectedItemColor: Colors.black,
       currentIndex: _selectedIndex, //현재 선택된 Index
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
       onTap: (int index) {
         setState(() {
           _selectedIndex = index;
-          bShowbottomSheet = true;
+          //bShowbottomSheet = true;
+          _currentMode = 241 + index;
           print(_markers.length);
         });
       },
       items: [
-        BottomNavigationBarItem(label: "Search", icon: Icon(Icons.search)),
-        BottomNavigationBarItem(label: "viewlist", icon: Icon(Icons.view_list)),
+        // BottomNavigationBarItem(label: "Search", icon: Icon(Icons.search)),
+        // BottomNavigationBarItem(label: "viewlist", icon: Icon(Icons.view_list)),
+        // BottomNavigationBarItem(
+        //     label: "add",
+        //     icon: Icon(
+        //       Icons.add,
+        //       size: 35,
+        //     )),
+        // BottomNavigationBarItem(label: "bookmark", icon: Icon(Icons.bookmark)),
+        BottomNavigationBarItem(label: "home", icon: Icon(Icons.home_outlined)),
+        BottomNavigationBarItem(label: "map", icon: Icon(Icons.map_outlined)),
         BottomNavigationBarItem(
-            label: "add",
-            icon: Icon(
-              Icons.add,
-              size: 35,
-            )),
-        BottomNavigationBarItem(label: "bookmark", icon: Icon(Icons.bookmark)),
-        BottomNavigationBarItem(label: "Setting", icon: Icon(Icons.settings)),
+            label: "user", icon: Icon(Icons.account_circle_outlined)),
       ],
     );
   }
@@ -158,14 +171,121 @@ class _DirectionsPageState extends State<DirectionsPage> {
     );
   }
 
-  _naverMap() {
-    return NaverMap(
-      onMapCreated: _onMapCreated,
-      onMapTap: _onMapTap,
-      onSymbolTap: _onSymbolTap,
-      markers: _markers,
+  _lending() {
+    return Visibility(
+      visible: _currentMode == MODE_HOME ? true : false,
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 25),
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        style: TextStyle(fontSize: 16, color: Colors.black),
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: '${user.userName}님\n',
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          TextSpan(
+                            text: '안녕하세요.',
+                          ),
+                        ],
+                      ),
+                    ),
+                    Icon(
+                      Icons.account_circle_rounded,
+                      size: 60,
+                    ),
+                  ]),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: Color(0xff8DBBFF)),
+              child: Container(
+                height: 85,
+                padding: EdgeInsets.only(left: 20, right: 50),
+                width: MediaQuery.of(context).size.width,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "장소상자",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            '${user.aroundPlace}',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            '내 주변',
+                            style: TextStyle(
+                              color: Color(0xff616161),
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            '${user.myPlace}',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            '내 장소',
+                            style: TextStyle(
+                              color: Color(0xff616161),
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ]),
+              ),
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              padding: EdgeInsets.only(left: 5, top: 20, bottom: 10),
+              child: Text("방금 전 등록된 곳이에요!"),
+            )
+          ],
+        ),
+      ),
+    );
+  }
 
-      // initLocationTrackingMode: LocationTrackingMode.Follow,
+  _naverMap() {
+    return Visibility(
+      visible: _currentMode == MODE_MAP ? true : false,
+      child: NaverMap(
+        onMapCreated: _onMapCreated,
+        onMapTap: _onMapTap,
+        onSymbolTap: _onSymbolTap,
+        markers: _markers,
+
+        // initLocationTrackingMode: LocationTrackingMode.Follow,
+      ),
     );
   }
 
