@@ -266,8 +266,68 @@ class _DirectionsPageState extends State<DirectionsPage> {
             ),
             Container(
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(left: 5, top: 20, bottom: 10),
+              padding: EdgeInsets.only(top: 15, bottom: 10),
               child: Text("방금 전 등록된 곳이에요!"),
+            ),
+            Expanded(
+              child: Container(
+                  child: ListView(
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(bottom: 5),
+                        height: 140,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.grey,
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        child: Text("test"),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 5),
+                        height: 140,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black,
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        child: Text("test"),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 5),
+                        height: 140,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black,
+                            ),
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        child: Text("test"),
+                      ),
+                      Card(
+                        margin: EdgeInsets.only(bottom: 5),
+                        child: ListTile(
+                          contentPadding: EdgeInsets.only(right: 12),
+                          leading: Container(
+                            width: 140,
+                            height: 100,
+                            color: Colors.black,
+                          ),
+                          title: Text("test"),
+                          subtitle: Text("test \n\n\n\nsubtitle"),
+                          onTap: () {
+                            print("tap card");
+                          },
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              )),
             )
           ],
         ),
