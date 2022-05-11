@@ -27,7 +27,7 @@ class _IntroPageState extends State<IntroPage>
       });
     });
 
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 2), () {
       setState(() {
         Get.offAllNamed("/login_page");
       });

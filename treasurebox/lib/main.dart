@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
           GetPage(
               name: "/adding_page",
               page: () => AddingPage(),
-              transition: Transition.downToUp),
+              transition: Transition.cupertinoDialog),
           GetPage(
               name: "/modal_page",
               page: () => ModalTest(),

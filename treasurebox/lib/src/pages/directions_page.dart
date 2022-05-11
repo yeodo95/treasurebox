@@ -31,7 +31,7 @@ class _DirectionsPageState extends State<DirectionsPage> {
     setState(() {
       _markers.add(Marker(
           markerId: 'Clicked',
-          position: LatLng(37.563600, 126.962370),
+          position: LatLng(37.4467864603003, 127.129984032227),
           captionText: "커스텀 아이콘",
           captionColor: Colors.indigo,
           captionTextSize: 20.0,
@@ -133,10 +133,9 @@ class _DirectionsPageState extends State<DirectionsPage> {
       showUnselectedLabels: false,
       onTap: (int index) {
         setState(() {
-          _selectedIndex = index;
           //bShowbottomSheet = true;
           _currentMode = 241 + index;
-          print(_markers.length);
+          _selectedIndex = index;
         });
       },
       items: [
@@ -260,6 +259,12 @@ class _DirectionsPageState extends State<DirectionsPage> {
                             ),
                           ),
                         ],
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Get.toNamed("/adding_page");
+                        },
+                        child: Text("장소추가"),
                       ),
                     ]),
               ),
