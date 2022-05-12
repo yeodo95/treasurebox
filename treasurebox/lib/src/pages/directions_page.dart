@@ -66,7 +66,12 @@ class _DirectionsPageState extends State<DirectionsPage> {
     // });
 
     if (Get.arguments != null) {
-      _markers = Get.arguments;
+      _markers.add(Marker(
+        markerId: DateTime.now().toIso8601String(),
+        position: Get.arguments,
+        infoWindow: '테스트',
+      ));
+      // _markers = Get.arguments;
       print('ok');
     }
 

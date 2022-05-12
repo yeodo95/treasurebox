@@ -23,6 +23,7 @@ class _AddingPageState extends State<AddingPage> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
@@ -31,8 +32,7 @@ class _AddingPageState extends State<AddingPage> {
         body: Container(
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.symmetric(horizontal: 40),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: ListView(
               children: [
                 Text(
                   "가게 등록",
@@ -41,7 +41,7 @@ class _AddingPageState extends State<AddingPage> {
                       fontWeight: FontWeight.bold,
                       color: Color(0xff8DBBFF)),
                 ),
-                SizedBox(height: 35),
+                SizedBox(height: 30),
                 Text(
                   "상호명[필수]",
                   style: TextStyle(
@@ -57,7 +57,7 @@ class _AddingPageState extends State<AddingPage> {
                   ),
                   cursorHeight: 20,
                 ),
-                SizedBox(height: 25),
+                SizedBox(height: 20),
                 Text(
                   "주소[필수]",
                   style: TextStyle(
@@ -113,7 +113,7 @@ class _AddingPageState extends State<AddingPage> {
                     ],
                   ),
                 ),
-                SizedBox(height: 25),
+                SizedBox(height: 20),
                 Text(
                   "영업시간",
                   style: TextStyle(
@@ -129,7 +129,7 @@ class _AddingPageState extends State<AddingPage> {
                   ),
                   cursorHeight: 20,
                 ),
-                SizedBox(height: 25),
+                SizedBox(height: 20),
                 Text(
                   "사진 첨부하기(최대3장)",
                   style: TextStyle(
@@ -140,66 +140,68 @@ class _AddingPageState extends State<AddingPage> {
                 ),
                 SizedBox(height: 8),
                 Container(
-                    height: 90,
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(60, 196, 196, 196),
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 0.2,
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(3)),
+                  height: 90,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(60, 196, 196, 196),
+                    border: Border.all(
+                      color: Colors.black,
+                      width: 0.2,
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Container(
-                          width: 65,
-                          height: 58,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 0.2,
-                            ),
+                    borderRadius: BorderRadius.all(Radius.circular(3)),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        width: 65,
+                        height: 58,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 0.2,
                           ),
-                          child: Center(
-                              child: Icon(
+                        ),
+                        child: Center(
+                            child: Icon(
+                          Icons.add,
+                          size: 13,
+                        )),
+                      ),
+                      Container(
+                        width: 65,
+                        height: 58,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 0.2,
+                          ),
+                        ),
+                        child: Center(
+                            child: Icon(
+                          Icons.add,
+                          size: 13,
+                        )),
+                      ),
+                      Container(
+                        width: 65,
+                        height: 58,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 0.2,
+                          ),
+                        ),
+                        child: Center(
+                          child: Icon(
                             Icons.add,
                             size: 13,
-                          )),
-                        ),
-                        Container(
-                          width: 65,
-                          height: 58,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 0.2,
-                            ),
                           ),
-                          child: Center(
-                              child: Icon(
-                            Icons.add,
-                            size: 13,
-                          )),
                         ),
-                        Container(
-                          width: 65,
-                          height: 58,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 0.2,
-                            ),
-                          ),
-                          child: Center(
-                              child: Icon(
-                            Icons.add,
-                            size: 13,
-                          )),
-                        ),
-                      ],
-                    )),
-                SizedBox(height: 25),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20),
                 Text(
                   "리뷰",
                   style: TextStyle(
@@ -208,10 +210,28 @@ class _AddingPageState extends State<AddingPage> {
                     color: Color(0xff616161),
                   ),
                 ),
+                Container(
+                  height: 135,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(60, 196, 196, 196),
+                    border: Border.all(
+                      color: Colors.black,
+                      width: 0.2,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(3)),
+                  ),
+                ),
+                SizedBox(height: 25),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(
+                        "/directions_page",
+                        arguments: LatLng(double.parse(kakaoLatitude),
+                            double.parse(kakaoLongitude)),
+                      );
+                    },
                     child: Text("추가하기"),
                     style: ElevatedButton.styleFrom(
                       primary: Color(0xff8DBBFF),
